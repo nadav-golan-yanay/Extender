@@ -40,7 +40,7 @@ This function **must** be called from `void setup()`.
   This function write an angle to a servo.
   
 
-  **`MotorWrite(int num, int value)`**
+**`MotorWrite(int num, int value)`**
 
 - num: The first integer is the number of the port that the motor connected to.
 - value: The second integer is the value that you want to write to the motor; this number represents the desired speed that you want the motor.
