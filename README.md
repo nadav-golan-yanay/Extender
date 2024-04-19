@@ -27,10 +27,26 @@ You may want to use the I2C scanner from the wire.h examples to check that the c
 
 ## Code:
 
+### constructors
+
+**`Extender()`**
+
+This is the defuolt constructor
+
+**`Extender(int _in1, int _in2, int _en)`**
+
+This constructor define motors pins. If you want to use the DC motors fanction (`L925nWrite`) use this constructor.
+- _in1: The **IN1** pin that connected to the L928n
+- _in2: The **IN2** pin that connected to the L928n
+- _en: The **EN** pin that connected to the L928n
+
+### Begin
+
 **`begin()`**
 
 This function **must** be called from `void setup()`.
 
+### Functions
 
 **`ServoWrite(int num, int value)`**
 
@@ -40,11 +56,22 @@ This function **must** be called from `void setup()`.
   This function write an angle to a servo.
   
 
-**`MotorWrite(int num, int value)`**
+**`ESCWrite(int num, int value)`**
 
 - num: The first integer is the number of the port that the motor connected to.
 - value: The second integer is the value that you want to write to the motor; this number represents the desired speed that you want the motor.
 
   This function write speed to a motor. The motor that you should connect is brushless motor and ESC (mostly used in drones)
 
-  
+
+**`L925nWrite(int dir, int value)`**
+
+- dir: The dirction of the motor
+- value: the speed of the motor
+
+dir | value | outcome
+-----|---------|----
+1  | x     | Forward
+-1  | x      | Backward
+0  | 0      | Nutral
+0  | 255      | Brack
