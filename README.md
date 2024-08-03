@@ -13,13 +13,13 @@ This library provides simple code for the PCA9685 16 Channel 12-bit PWM/Servo Dr
 The PCA9685 works with the I2C serial communication protocol. When connected to an Arduino, it needs 5V, and when connected to an ESP32, it needs 3.3V.
 
 Connections:
-| Gyro | Arduino | ESP32 |
+| PCA9685 | Arduino | ESP32 |
 | ---- | ------- | ----- |
 | GND  | GND     | GND   |
 | VCC  | 5V      | 3V3   |
 | SCL  | A5      | 22    |
 | SDA  | A4      | 21    |
-| V+   | 3.3~6V  | 3.3~6V|
+| V+   | 5V~6V  | 6V~6V|
 
 You may want to use the I2C scanner from the wire.h examples to check that the connections are correct and the gyro is intact.
 
